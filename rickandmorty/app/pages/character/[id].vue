@@ -9,6 +9,7 @@ type CharacterDetail = {
   location: {
     name: string
   }
+  image: string // <-- Añadir imagen
 }
 
 const { data, pending, error } = await useFetch<CharacterDetail>(
@@ -26,6 +27,9 @@ const { data, pending, error } = await useFetch<CharacterDetail>(
       <p>Status: {{ data.status }}</p>
       <p>Species: {{ data.species }}</p>
       <p>Location: {{ data.location.name }}</p>
+
+      <img :src="data.image" :alt="data.name" />
+ 
     </div>
   </div>
 </template>

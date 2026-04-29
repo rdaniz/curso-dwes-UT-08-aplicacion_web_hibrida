@@ -16,7 +16,7 @@ const { data, pending, error } = await useFetch<CharacterListItem[]>(
     <ul v-else>
       <li v-for="char in data" :key="char.id">
         <NuxtLink :to="`/character/${char.id}`">
-          {{ char.name }}
+          {{ char.name }} - {{ char.status }}
         </NuxtLink>
       </li>
     </ul>
